@@ -3,6 +3,7 @@ import dotenv, {parse} from 'dotenv';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import videoTumb from './routes/videoTumb.js';
+import product from './routes/product.js';
 
 dotenv.config()
 const app=express()
@@ -10,7 +11,9 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
     extended:true
 }))
+app.use('/products',product)
 app.use('/videos',videoTumb)
+// app.use('/prduct',product)
 const port=process.env.PORT
 console.log(port)
 app.listen(port,()=>{

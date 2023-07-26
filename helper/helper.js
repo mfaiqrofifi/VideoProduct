@@ -8,14 +8,20 @@ const succes=(data,status)=>{
 const errorBadReq=(err)=>{
     return{
         message:err.message,
-        staus:400
+        status:400
     }
 }
 const errorInternalServer=(err)=>{
     return{
         message:err.message,
-        staus:500
+        status:500
+    }
+}
+const errorNotFound=(err)=>{
+    return{
+        message:err.message,
+        status:404
     }
 }
 
-export {succes,errorBadReq,errorInternalServer};
+export {succes,errorBadReq,errorInternalServer,errorNotFound};
