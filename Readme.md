@@ -76,3 +76,295 @@ Below are the available endpoints along with their descriptions:
 - Parameter:**'idVideo'**
 - Response Body: array wich has items of object with properties **'userName'**(string),**'comment'**(string),**'videoId'**(string),**created_at**(Timestamp),**upadted_at**(Timestamp)
 
+## API request and response
+
+Videos Object
+
+```json
+{
+    id:ObjectId,
+    url:String,
+    created_at: datetime(iso 8601),
+    updated_at: datetime(iso 8601)
+}
+```
+### POST /videos
+Creates a new Videos Thumbnail and returns the new object
+
+- **URL params**
+  
+  none
+
+- **Headers**
+  
+  Content-Type: application/json
+
+- **Request**
+  
+  ``````json
+  {
+    url:string
+  }
+  ``````
+- Success Response:
+
+    - code: 201
+    - content :
+    ``````json
+    {
+        message:"Success",
+        status:201,
+        data:{<videos_object>}
+    }
+    ``````
+- Error response
+    - code: 400
+    - response:{
+    message:"Bad Request",
+    code:400
+}
+
+    - code: 500
+    - response:{
+    message:error.message,
+    code:500
+}
+
+### GET /videos
+Returns all Videos thumbnail
+
+- **URL params**
+  
+  none
+
+- **Headers**
+  
+  Content-Type: application/json
+
+- **Request**
+
+    none
+- Success Response:
+
+    - code: 200
+    - content :
+    ``````json
+    {
+        message:"Success",
+        status:200,
+        data:[{<videos_object>}]
+    }
+    ``````
+- Error response
+    - code: 500
+    - response:{
+    message:error.message,
+    code:500
+}
+
+Poduct Object
+
+``````json
+{
+    id:ObjectId
+    linkProduct:String,
+    title:String,
+    price:Number,
+    videoId:ObjectId,
+    created_at: datetime(iso 8601),
+    updated_at: datetime(iso 8601)
+}
+
+``````
+
+### POST /product
+Creates a new Product and returns the new object
+
+- **URL params**
+  
+  none
+
+- **Headers**
+  
+  Content-Type: application/json
+
+- **Request**
+  
+  ``````json
+  {
+    linkProduct:string,
+    title:string,
+    price:int,
+    videoId:string
+  }
+  ``````
+- Success Response:
+
+    - code: 201
+    - content :
+    ``````json
+    {
+        message:"Success",
+        status:201,
+        data:{<videos_object>}
+    }
+    ``````
+- Error response
+    - code: 400
+    - response:{
+    message:"Bad Request",
+    code:400
+}
+
+    - code: 500
+    - response:{
+    message:error.message,
+    code:500
+}
+
+### GET /product/:idVideo
+Returns all Product associated with the specified idVideo from video thumbnail
+
+- **URL params**
+  
+  Required=[idVideo:int]
+
+- **Headers**
+  
+  Content-Type: application/json
+
+- **Request**
+  
+  none
+- Success Response:
+
+    - code: 200
+    - content :
+    ``````json
+    {
+        message:"Success",
+        status:201,
+        data:[
+            {
+                <product_object>,
+                videos:[{<videos_object>}]
+            }
+        ]
+    }
+    ``````
+- Error response
+    - code: 404
+    - response:{
+    message:"Not found",
+    code:400
+}
+
+    - code: 500
+    - response:{
+    message:error.message,
+    code:500
+}
+
+Comment Object
+
+``````json
+{
+    id: ObejctId,
+    userName:string,
+    comment:string,
+    videoId:ObjectId,
+    created_at: datetime(iso 8601),
+    updated_at: datetime(iso 8601)
+}
+``````
+### POST /comment
+Creates a new Comment and returns the new object
+
+- **URL params**
+  
+  none
+
+- **Headers**
+  
+  Content-Type: application/json
+
+- **Request**
+  
+  ``````json
+  {
+    userName:String,
+    comment:String,
+    videoId:String
+  }
+  ``````
+- Success Response:
+
+    - code: 201
+    - content :
+    ``````json
+    {
+        message:"Success",
+        status:201,
+        data:{<comment_object>}
+    }
+    ``````
+- Error response
+    - code: 400
+    - response:{
+    message:"Bad Request",
+    code:400
+}
+
+    - code: 500
+    - response:{
+    message:error.message,
+    code:500
+}
+### GET /comment/:idVideo
+Returns all Comment associated with the specified idVideo thumbnail
+
+- **URL params**
+  
+  Required=[idVideo:int]
+
+- **Headers**
+  
+  Content-Type: application/json
+
+- **Request**
+  
+  none
+- Success Response:
+
+    - code: 200
+    - content :
+    ``````json
+    {
+        message:"Success",
+        status:200,
+        data:[
+            {
+                <comment_object>,
+                videos:[{<videos_object>}]
+            }
+        ]
+    }
+    ``````
+- Error response
+    - code: 404
+    - response:{
+    message:"Not found",
+    code:400
+}
+
+    - code: 500
+    - response:{
+    message:error.message,
+    code:500
+}
+
+## How to run in local
+
+``````bash
+npm run dev
+``````

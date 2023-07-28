@@ -29,7 +29,17 @@ export async function getCommentById(req,res){
     try{
         const idVideo=req.params.idVideo
         const idObjectVideos=new mongoose.Types.ObjectId(idVideo)
-        const comment=await Comments.find({videoId:idObjectVideos})
+        const comment=await Comments.aggregate([{$match:{
+            videoId:idObjectVideos
+        }
+        },{
+            $lookup: {
+                from: "videos", // collection name in db
+                localField: "videoId",
+                foreignField: "_id",
+                as: "videos"
+            }
+        }])
         if(!comment){
             throw new Error("Not found")
         }

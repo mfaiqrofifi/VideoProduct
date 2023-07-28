@@ -31,7 +31,17 @@ export async function getProductById(req,res){
     try{
         const idVideo=req.params.idVideo
         const idObjectVideos=new mongoose.Types.ObjectId(idVideo)
-        const products=await Products.find({videoId:idObjectVideos})
+        const products=await Products.aggregate([{$match:{
+            videoId:idObjectVideos
+        }
+        },{
+            $lookup: {
+                from: "videos", // collection name in db
+                localField: "videoId",
+                foreignField: "_id",
+                as: "videos"
+            }
+        }])
         if(!products){
             throw new Error("Not found")
         }
