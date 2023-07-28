@@ -363,8 +363,14 @@ Returns all Comment associated with the specified idVideo thumbnail
     code:500
 }
 
-## How to run in local
+## How to run in your local
 
 ``````bash
+clone https://github.com/mfaiqrofifi/VideoProduct.git
+
+npm install
+
+#add .env file and fill with your local credential for PORT and DATABASE_URL
+
 npm run dev
 ``````
