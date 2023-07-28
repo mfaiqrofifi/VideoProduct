@@ -80,7 +80,7 @@ Below are the available endpoints along with their descriptions:
 
 Videos Object
 
-```json
+```
 {
     id:ObjectId,
     url:String,
@@ -101,7 +101,7 @@ Creates a new Videos Thumbnail and returns the new object
 
 - **Request**
   
-  ``````json
+  ``````
   {
     url:string
   }
@@ -110,7 +110,7 @@ Creates a new Videos Thumbnail and returns the new object
 
     - code: 201
     - content :
-    ``````json
+    ``````
     {
         message:"Success",
         status:201,
@@ -148,7 +148,7 @@ Returns all Videos thumbnail
 
     - code: 200
     - content :
-    ``````json
+    ``````
     {
         message:"Success",
         status:200,
@@ -164,7 +164,7 @@ Returns all Videos thumbnail
 
 Poduct Object
 
-``````json
+``````
 {
     id:ObjectId
     linkProduct:String,
@@ -190,7 +190,7 @@ Creates a new Product and returns the new object
 
 - **Request**
   
-  ``````json
+  ``````
   {
     linkProduct:string,
     title:string,
@@ -202,7 +202,7 @@ Creates a new Product and returns the new object
 
     - code: 201
     - content :
-    ``````json
+    ``````
     {
         message:"Success",
         status:201,
@@ -240,7 +240,7 @@ Returns all Product associated with the specified idVideo from video thumbnail
 
     - code: 200
     - content :
-    ``````json
+    ``````
     {
         message:"Success",
         status:201,
@@ -267,7 +267,7 @@ Returns all Product associated with the specified idVideo from video thumbnail
 
 Comment Object
 
-``````json
+``````
 {
     id: ObejctId,
     userName:string,
@@ -290,7 +290,7 @@ Creates a new Comment and returns the new object
 
 - **Request**
   
-  ``````json
+  ``````
   {
     userName:String,
     comment:String,
@@ -301,7 +301,7 @@ Creates a new Comment and returns the new object
 
     - code: 201
     - content :
-    ``````json
+    ``````
     {
         message:"Success",
         status:201,
@@ -338,7 +338,7 @@ Returns all Comment associated with the specified idVideo thumbnail
 
     - code: 200
     - content :
-    ``````json
+    ``````
     {
         message:"Success",
         status:200,
