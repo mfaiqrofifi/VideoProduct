@@ -177,7 +177,7 @@ Poduct Object
 
 ``````
 
-### POST /product
+### POST /products
 Creates a new Product and returns the new object
 
 - **URL params**
@@ -222,7 +222,7 @@ Creates a new Product and returns the new object
     code:500
 }
 
-### GET /product/:idVideo
+### GET /products/:idVideo
 Returns all Product associated with the specified idVideo from video thumbnail
 
 - **URL params**

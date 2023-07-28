@@ -40,7 +40,8 @@ export async function getCommentById(req,res){
                 as: "videos"
             }
         }])
-        if(!comment){
+        // console.log(comment)
+        if(comment.length==0){
             throw new Error("Not found")
         }
         res.status(200).json(succes(comment,200))

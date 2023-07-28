@@ -5,7 +5,7 @@ import Products from "../model/product.js"
 export async function createProduct(req,res){
     try{
         const {linkProduct,title,price,videoId}=req.body
-        console.log(linkProduct,title,price,videoId)
+        // console.log(linkProduct,title,price,videoId)
         if(!linkProduct||!title||!price||!videoId){
             throw new Error("Bad Request")
         }

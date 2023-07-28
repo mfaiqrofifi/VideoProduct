@@ -4,8 +4,8 @@ import Videos from "../model/videoThumb.js";
 export async function createVideos(req,res){
     try{
         const {url}=req.body;
-        console.log(req.body)
-        if (url===""){
+        // console.log(req.body)
+        if (!url){
             throw new Error("Bad Request")
         }
         const video=await new Videos({
