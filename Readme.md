@@ -366,7 +366,7 @@ Returns all Comment associated with the specified idVideo thumbnail
 ## How to run in your local
 
 ``````bash
-clone https://github.com/mfaiqrofifi/VideoProduct.git
+git clone https://github.com/mfaiqrofifi/VideoProduct.git
 
 npm install
 
