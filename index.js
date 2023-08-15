@@ -30,3 +30,5 @@ db.on('error',()=>{
 db.once('connected',()=>{
     console.log('concected')
 })
+//JsxLvhDP2vDb0YVz pw
+//mfaiqrofifi
