@@ -5,9 +5,11 @@ import bodyParser from 'body-parser';
 import videoTumb from './routes/videoTumb.js';
 import product from './routes/product.js';
 import comment from './routes/comment.js';
+import cors from 'cors';
 
 dotenv.config()
 const app=express()
+app.use(cors({origin:"*"}))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
     extended:true
